@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- 🔑 CRITICAL: correct mobile scaling -->
+<!-- Mobile viewport -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>For You</title>
@@ -28,7 +28,6 @@
         background: #ffffff;
     }
 
-    /* 👇 SCALE THE ENTIRE PAGE */
     .page {
         position: absolute;
         width: 100%;
@@ -43,7 +42,7 @@
         transform-origin: center;
     }
 
-    /* 📱 PHONE BOOST */
+    /* Phone scale boost */
     @media (max-width: 600px) {
         .page {
             transform: scale(1.35);
@@ -61,7 +60,7 @@
 
     .title-normal {
         font-size: 32px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .title-small {
@@ -69,7 +68,13 @@
         margin-top: 20px;
     }
 
-    /* Emoji still responsive, page scaling does the real work */
+    /* Instruction text */
+    .hint {
+        font-size: 16px;
+        opacity: 0.6;
+        margin-bottom: 25px;
+    }
+
     .emoji {
         width: min(95vw, 700px);
         height: auto;
@@ -81,20 +86,21 @@
 
 <!-- PAGE 1 -->
 <div id="page1" class="page">
+    <div class="hint">tap twice anywhere</div>
     <div class="title-normal">ehcuse mua</div>
-    <img src="./wellwell/emoji2.png?v=6" class="emoji" alt="">
+    <img src="./wellwell/emoji.png?v=7" class="emoji" alt="">
 </div>
 
 <!-- PAGE 2 -->
 <div id="page2" class="page hidden">
     <div class="title-big">Good Morning</div>
     <div class="title-normal">for you</div>
-    <img src="./wellwell/emoji.png?v=6" class="emoji" alt="">
+    <img src="./wellwell/emoji2.png?v=7" class="emoji" alt="">
     <div class="title-small">i apologized for yesterday</div>
 </div>
 
 <!-- BACKGROUND MUSIC -->
-<audio id="bgMusic" src="./wellwell/bg-music.mpeg?v=6" loop></audio>
+<audio id="bgMusic" src="./wellwell/bg-music.mpeg?v=7" loop></audio>
 
 <script>
     const page1 = document.getElementById("page1");
