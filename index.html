@@ -4,12 +4,10 @@
 <meta charset="UTF-8">
 <title>For You</title>
 
-<style>
-    @font-face {
-        font-family: "CuteFont";
-        src: local("Comic Sans MS"), local("Arial Rounded MT Bold");
-    }
+<!-- Handwritten font (matches image style) -->
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 
+<style>
     * {
         margin: 0;
         padding: 0;
@@ -21,7 +19,7 @@
         width: 100vw;
         height: 100vh;
         overflow: hidden;
-        font-family: "CuteFont", sans-serif;
+        font-family: 'Patrick Hand', cursive;
         cursor: pointer;
         background: #ffffff;
     }
@@ -42,21 +40,21 @@
     }
 
     .title-big {
-        font-size: 42px;
+        font-size: 48px;
         margin-bottom: 10px;
     }
 
     .title-normal {
-        font-size: 28px;
+        font-size: 32px;
         margin-bottom: 20px;
     }
 
     .title-small {
-        font-size: 16px;
+        font-size: 18px;
         margin-top: 20px;
     }
 
-    /* 🔥 BIG ON PHONE + BIG ON LAPTOP */
+    /* BIG on phone + BIG on laptop */
     .emoji {
         width: min(95vw, 700px);
         height: auto;
@@ -69,19 +67,19 @@
 <!-- PAGE 1 -->
 <div id="page1" class="page">
     <div class="title-normal">ehcuse mua</div>
-    <img src="./wellwell/emoji.png?v=4" class="emoji" alt="">
+    <img src="./wellwell/emoji.png?v=5" class="emoji" alt="">
 </div>
 
 <!-- PAGE 2 -->
 <div id="page2" class="page hidden">
     <div class="title-big">Good Morning</div>
     <div class="title-normal">for you</div>
-    <img src="./wellwell/emoji2.png?v=4" class="emoji" alt="">
+    <img src="./wellwell/emoji2.png?v=5" class="emoji" alt="">
     <div class="title-small">i apologized for yesterday</div>
 </div>
 
 <!-- BACKGROUND MUSIC -->
-<audio id="bgMusic" src="./wellwell/bg-music.mpeg?v=4" loop></audio>
+<audio id="bgMusic" src="./wellwell/bg-music.mpeg?v=5" loop></audio>
 
 <script>
     const page1 = document.getElementById("page1");
