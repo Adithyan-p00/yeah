@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You</title>
+
+<style>
+    @font-face {
+        font-family: "CuteFont";
+        src: local("Comic Sans MS"), local("Arial Rounded MT Bold");
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        font-family: "CuteFont", sans-serif;
+        cursor: pointer;
+        background: #ffffff;
+    }
+
+    .page {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    /* TEXT STYLES */
+    .title-big {
+        font-size: 42px;
+        margin-bottom: 10px;
+    }
+
+    .title-normal {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .title-small {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    /* 🔥 REALLY BIG EMOJI */
+    .emoji {
+        width: 420px;        /* BIG on laptops */
+        max-width: 90vw;     /* Still fits mobile */
+        height: auto;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div id="page1" class="page">
+    <div class="title-normal">ehcuse mua</div>
+    <img src="emoji.png" class="emoji" alt="emoji">
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="page hidden">
+    <div class="title-big">Good Morning</div>
+    <div class="title-normal">for you</div>
+    <img src="emoji2.png" class="emoji" alt="emoji">
+    <div class="title-small">i apologized for yesterday</div>
+</div>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" src="bg-music.mpeg" loop></audio>
+
+<script>
+    const page1 = document.getElementById("page1");
+    const page2 = document.getElementById("page2");
+    const bgMusic = document.getElementById("bgMusic");
+
+    bgMusic.volume = 0.2;
+
+    let started = false;
+
+    function startExperience() {
+        if (started) return;
+        started = true;
+        bgMusic.play();
+    }
+
+    function goToPage2() {
+        page1.classList.add("hidden");
+        page2.classList.remove("hidden");
+    }
+
+    document.body.addEventListener("click", () => {
+        if (!started) {
+            startExperience();
+        } else if (!page1.classList.contains("hidden")) {
+            goToPage2();
+        }
+    });
+</script>
+
+</body>
+</html>
